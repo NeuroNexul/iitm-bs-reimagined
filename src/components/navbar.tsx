@@ -104,11 +104,11 @@ const NavItems = [
         link: "https://study.iitm.ac.in/ds/admissions.html#AD6",
       },
       {
-        title: "1. Regular Entry",
+        title: "\u00a0\u00a0\u00a0\u00a01. Regular Entry",
         link: "https://study.iitm.ac.in/ds/admissions.html#AD7",
       },
       {
-        title: "2. JEE-based Entry",
+        title: "\u00a0\u00a0\u00a0\u00a02. JEE-based Entry",
         link: "https://study.iitm.ac.in/ds/admissions.html#AD8",
       },
       {
@@ -156,10 +156,6 @@ const NavItems = [
     ],
   },
   {
-    title: "School Connect",
-    link: "https://school-connect.study.iitm.ac.in/",
-  },
-  {
     title: "Achievements ",
     link: "",
     children: [
@@ -167,19 +163,19 @@ const NavItems = [
         title: "Recognition",
       },
       {
-        title: "1. Toppers Page",
+        title: "\u00a0\u00a0\u00a0\u00a01. Toppers Page",
         link: "https://study.iitm.ac.in/student-achievements/toppers",
       },
       {
-        title: "2. Student's Best Projects",
+        title: "\u00a0\u00a0\u00a0\u00a02. Student's Best Projects",
         link: "https://study.iitm.ac.in/student-achievements/projects",
       },
       {
-        title: "3. Teaching Assistance",
+        title: "\u00a0\u00a0\u00a0\u00a03. Teaching Assistance",
         link: "https://study.iitm.ac.in/student-achievements/interns",
       },
       {
-        title: "4. Alumni",
+        title: "\u00a0\u00a0\u00a0\u00a04. Alumni",
         link: "https://study.iitm.ac.in/student-achievements/alumni",
       },
       {
@@ -251,7 +247,7 @@ export default function NavBar({}: Props) {
 
   return (
     <nav className={cn("w-full h-20")}>
-      <div className={cn("w-full h-full max-w-[100rem] mx-auto px-4")}>
+      <div className={cn("w-full h-full max-w-[120rem] mx-auto px-4")}>
         <div className={cn("flex justify-between items-center w-full h-full")}>
           <div className={cn("flex items-center")}>
             <div className={cn("")}>
@@ -302,9 +298,10 @@ export default function NavBar({}: Props) {
                               key={childIndex}
                               href={child.link}
                               className={cn(
-                                "block hover:text-foreground transition-colors duration-200",
+                                "block transition-colors duration-200",
                                 "whitespace-nowrap",
-                                "px-4 py-1"
+                                "px-4 py-1",
+                                child.link && "hover:text-foreground"
                               )}
                             >
                               {child.title}
@@ -328,7 +325,7 @@ export default function NavBar({}: Props) {
               </div>
             ))}
 
-            <Link href={"https://study.iitm.ac.in/ds/login.html"}>
+            <Link href={"https://ds.study.iitm.ac.in/auth/login"}>
               <button className={cn("px-4 py-2 bg-foreground hover:bg-muted-foreground transition-colors duration-300 text-background font-semibold rounded-lg uppercase")}>
                 Sign In
               </button>
