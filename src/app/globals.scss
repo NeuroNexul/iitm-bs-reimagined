@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 206 75% 90%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 222 100% 94%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 222 100% 94%;
+    --secondary-foreground: 350 70% 40%;
+
+    --muted: 222 100% 94%;
+    --muted-foreground: 215deg 20% 30%;
+
+    --accent: 222 100% 94%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --selection: 319 20% 73%;
+    --selection-foreground: 222.2 84% 4.9%;
+
+    --border: 215 38% 68%;
+    --input: 215 38% 68%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  // Not print
+  @media not print {
+    .dark {
+      --background: 222.2 84% 4.9%;
+      --foreground: 210 40% 98%;
+
+      --card: 222.2 84% 4.9%;
+      --card-foreground: 210 40% 98%;
+
+      --popover: 222.2 84% 4.9%;
+      --popover-foreground: 210 40% 98%;
+
+      --primary: 210 40% 98%;
+      --primary-foreground: 222.2 47.4% 11.2%;
+
+      --secondary: 217.2 32.6% 17.5%;
+      --secondary-foreground: 16 100% 60%;
+
+      --muted: 217.2 32.6% 17.5%;
+      --muted-foreground: 215 20.2% 65.1%;
+
+      --accent: 217.2 32.6% 17.5%;
+      --accent-foreground: 210 40% 98%;
+
+      --destructive: 0 62.8% 30.6%;
+      --destructive-foreground: 210 40% 98%;
+
+      --selection: 9 43% 21%;
+      --selection-foreground: 210 40% 98%;
+
+      --border: 220 25% 25%;
+      --input: 217.2 32.6% 17.5%;
+      --ring: 212.7 26.8% 83.9%;
+    }
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  html {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    font-size: 0.875rem;
+
+    color-scheme: light;
+
+    &:has(.dark) {
+      color-scheme: dark;
+    }
+  }
+}
+
+::selection {
+  background-color: hsl(var(--selection));
+  color: hsl(var(--selection-foreground));
+}
