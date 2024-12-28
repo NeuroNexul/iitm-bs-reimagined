@@ -5,6 +5,7 @@ import React, { useState } from "react";
 import Logo from "./logo";
 import Link from "next/link";
 import { FaChevronDown } from "react-icons/fa6";
+import { ScrollArea } from "../ui/scroll-area";
 
 const NavItems = [
   {
@@ -240,15 +241,19 @@ const NavItems = [
   },
 ];
 
-type Props = object;
+type Props = React.HTMLAttributes<HTMLDivElement> & {};
 
-export default function NavBar({}: Props) {
+export default function NavBar({ className, ...props }: Props) {
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className={cn("w-full h-20")}>
-      <div className={cn("w-full h-full max-w-[120rem] mx-auto px-4")}>
-        <div className={cn("flex justify-between items-center w-full h-full")}>
+    <nav
+      className={cn("w-full h-auto max-h-dvh border-b", className)}
+      {...props}
+    >
+      <div className={cn("w-full h-auto max-w-[120rem] mx-auto px-6")}>
+        <div className={cn("h-20 flex justify-between items-center w-full")}>
           <div className={cn("flex items-center")}>
             <div className={cn("")}>
               <Link href="https://study.iitm.ac.in/">
@@ -256,7 +261,13 @@ export default function NavBar({}: Props) {
               </Link>
             </div>
           </div>
-          <div className={cn("flex items-center gap-5 text-muted-foreground")}>
+
+          {/* Links */}
+          <div
+            className={cn(
+              "hidden xl:flex items-center gap-5 text-muted-foreground"
+            )}
+          >
             {NavItems.map((item, index) => (
               <div key={index} className={cn("flex items-center gap-4")}>
                 {item.children ? (
@@ -294,9 +305,9 @@ export default function NavBar({}: Props) {
                           child.title === "hr" ? (
                             <hr key={childIndex} className={cn("my-2")} />
                           ) : (
-                            <a
+                            <Link
                               key={childIndex}
-                              href={child.link}
+                              href={child.link || "#"}
                               className={cn(
                                 "block transition-colors duration-200",
                                 "whitespace-nowrap",
@@ -305,7 +316,7 @@ export default function NavBar({}: Props) {
                               )}
                             >
                               {child.title}
-                            </a>
+                            </Link>
                           )
                         )}
                       </div>
@@ -326,12 +337,164 @@ export default function NavBar({}: Props) {
             ))}
 
             <Link href={"https://ds.study.iitm.ac.in/auth/login"}>
-              <button className={cn("px-4 py-2 bg-foreground hover:bg-muted-foreground transition-colors duration-300 text-background font-semibold rounded-lg uppercase")}>
+              <button
+                className={cn(
+                  "px-4 py-2 bg-foreground hover:bg-muted-foreground transition-colors duration-300 text-background font-semibold rounded-lg uppercase"
+                )}
+              >
                 Sign In
               </button>
             </Link>
           </div>
+
+          {/* Mobile Menu Button */}
+          <div
+            className={cn(
+              "flex items-center xl:hidden",
+              "text-muted-foreground"
+            )}
+          >
+            <button
+              className={cn(
+                "flex flex-col items-center justify-center aspect-square",
+                "p-2 border rounded-lg"
+              )}
+              aria-label="Open Menu"
+              onClick={() => setMenuOpen((prev) => !prev)}
+            >
+              <div
+                className={cn(
+                  "h-0.5 bg-current border-none rounded-full",
+                  "transition-all duration-200 ease-in-out",
+                  "w-3.5 origin-left",
+                  menuOpen
+                    ? "rotate-45 -translate-y-[0.40625rem] -translate-x-[0.15625rem] w-3"
+                    : "-translate-y-1.5 -translate-x-1.5"
+                )}
+              />
+              <div
+                className={cn(
+                  "h-0.5 bg-current border-none rounded-full",
+                  "transition-all duration-200 ease-in-out",
+                  "w-6 origin-center",
+                  menuOpen ? "-rotate-45" : ""
+                )}
+              />
+              <div
+                className={cn(
+                  "h-0.5 bg-current border-none rounded-full",
+                  "transition-all duration-200 ease-in-out",
+                  "w-3.5 origin-right",
+                  menuOpen
+                    ? "rotate-45 translate-y-[0.40625rem] translate-x-[0.15625rem] w-3"
+                    : "translate-y-1.5 translate-x-1.5"
+                )}
+              />
+            </button>
+          </div>
         </div>
+      </div>
+
+      {/* Mobile Menu */}
+      <div
+        className={cn(
+          "top-20 left-0 w-full shadow-lg overflow-clip",
+          "transition-all duration-300 ease-in-out",
+          menuOpen
+            ? "max-h-[calc(100dvh-5rem)] opacity-100 pointer-events-auto"
+            : "max-h-0 opacity- pointer-events-none"
+        )}
+      >
+        <ScrollArea className={cn("h-[calc(100dvh-5rem)]")}>
+          <div className={cn("flex flex-col gap-4 px-6 py-4")}>
+            {NavItems.map((item, index) => (
+              <div
+                key={index}
+                className={cn("flex flex-col gap-2 text-muted-foreground")}
+              >
+                {item.children ? (
+                  <div
+                    className={cn(
+                      "relative w-full group flex flex-col items-center gap-2"
+                    )}
+                  >
+                    <a
+                      className={cn(
+                        "hover:text-foreground transition-colors duration-200 cursor-pointer",
+                        "whitespace-nowrap text-lg font-bold",
+                        "w-full flex items-center justify-between gap-1.5",
+                        index === selectedIndex && "text-foreground"
+                      )}
+                      onClick={() =>
+                        setSelectedIndex((prev) =>
+                          prev === index ? -1 : index
+                        )
+                      }
+                    >
+                      {item.title}
+                      <FaChevronDown className={cn("text-sm")} />
+                    </a>
+
+                    {/* Sub-menu */}
+                    <div
+                      className={cn(
+                        "w-full border-l border-foreground overflow-clip",
+                        "transition-all duration-200 delay-0 ease-linear",
+                        selectedIndex === index
+                          ? "opacity-100 max-h-[1000px] pointer-events-auto"
+                          : "opacity-0 max-h-0 pointer-events-none"
+                      )}
+                    >
+                      {item.children.map((child, childIndex) =>
+                        child.title === "hr" ? (
+                          <hr
+                            key={childIndex}
+                            className={cn("my-2 border-foreground/50")}
+                          />
+                        ) : (
+                          <Link
+                            key={childIndex}
+                            href={child.link || "#"}
+                            className={cn(
+                              "block transition-colors duration-200",
+                              "whitespace-nowrap",
+                              "px-4 py-1",
+                              child.link && "hover:text-foreground"
+                            )}
+                          >
+                            {child.title}
+                          </Link>
+                        )
+                      )}
+                    </div>
+                  </div>
+                ) : (
+                  <Link
+                    href={item.link}
+                    className={cn(
+                      "hover:text-foreground transition-colors duration-200",
+                      "whitespace-nowrap text-lg font-bold"
+                    )}
+                  >
+                    {item.title}
+                  </Link>
+                )}
+              </div>
+            ))}
+
+            <Link href={"https://ds.study.iitm.ac.in/auth/login"}>
+              <button
+                className={cn(
+                  "px-4 py-2 w-full rounded-lg",
+                  "bg-foreground hover:bg-muted-foreground transition-colors duration-300",
+                  "text-background font-semibold uppercase"
+                )}
+              >
+                Sign In
+              </button>
+            </Link>
+          </div>
+        </ScrollArea>
       </div>
     </nav>
   );
