@@ -249,7 +249,7 @@ export default function NavBar({ className, ...props }: Props) {
 
   return (
     <nav
-      className={cn("w-full h-auto max-h-dvh border-b", className)}
+      className={cn("w-full h-auto max-h-dvh border-b z-50", className)}
       {...props}
     >
       <div className={cn("w-full h-auto max-w-[120rem] mx-auto px-6")}>
@@ -286,7 +286,7 @@ export default function NavBar({ className, ...props }: Props) {
                     </a>
                     <div
                       className={cn(
-                        "absolute top-full left-1/2 -translate-x-1/2 pt-4",
+                        "absolute z-10 top-full left-1/2 -translate-x-1/2 pt-4",
                         "transition-all duration-200 ease-in-out",
                         selectedIndex === index
                           ? "opacity-100 translate-y-0 pointer-events-auto"
