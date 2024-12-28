@@ -303,7 +303,7 @@ export default function NavBar({ className, ...props }: Props) {
                       >
                         {item.children.map((child, childIndex) =>
                           child.title === "hr" ? (
-                            <hr key={childIndex} className={cn("my-2")} />
+                            <hr key={childIndex} className={cn("my-2 border-muted-foreground/50")} />
                           ) : (
                             <Link
                               key={childIndex}
@@ -398,7 +398,7 @@ export default function NavBar({ className, ...props }: Props) {
       {/* Mobile Menu */}
       <div
         className={cn(
-          "top-20 left-0 w-full shadow-lg overflow-clip",
+          "block xl:hidden top-20 left-0 w-full shadow-lg overflow-clip",
           "transition-all duration-300 ease-in-out",
           menuOpen
             ? "max-h-[calc(100dvh-5rem)] opacity-100 pointer-events-auto"
