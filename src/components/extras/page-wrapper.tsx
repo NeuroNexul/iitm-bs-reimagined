@@ -2,6 +2,7 @@ import React from "react";
 import NavBar from "./navbar";
 import { ScrollArea } from "../ui/scroll-area";
 import { cn } from "@/lib/utils";
+import Footer from "./footer";
 
 type Props = {
   showNavBar?: boolean;
@@ -32,7 +33,7 @@ export default function PageWrapper({
         )}
         <div className="h-20" />
         {children}
-        {showFooter && <div className={footerClassName} />}
+        {showFooter && <Footer className={footerClassName} />}
       </ScrollArea>
     </div>
   );
