@@ -6,12 +6,25 @@ import Image from "next/image";
 import { FaPeopleGroup, FaQuoteRight } from "react-icons/fa6";
 import { LuLaptop } from "react-icons/lu";
 import { MdOutlineVerified } from "react-icons/md";
+import FAQs from "./faqs";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IITM BS in Data Science & Applications",
+  description:
+    "A unique 4-year degree program by IIT Madras, India's top technical institute",
+};
 
 export default function DSPage() {
   return (
     <PageWrapper>
       {/* Hero Section */}
-      <div className={cn("w-full max-w-[90rem] mx-auto", "py-12 lg:py-24 px-4 sm:px-8")}>
+      <div
+        className={cn(
+          "w-full max-w-[90rem] mx-auto",
+          "py-12 lg:py-24 px-4 sm:px-8"
+        )}
+      >
         <div className={cn("flex flex-col lg:flex-row items-center gap-12")}>
           {/* Left */}
           <div className={cn("flex-1 flex flex-col items-start justify-start")}>
@@ -200,12 +213,12 @@ export default function DSPage() {
 
           <div
             className={cn(
-              "relative z-0 w-full rounded-lg border-2 py-6 px-6 lg:px-6 bg-card shadow-lg"
+              "relative z-0 w-full rounded-lg border-2 py-6 px-6 lg:px-6 bg-selection/30 shadow-lg"
             )}
           >
             <FaQuoteRight
               className={cn(
-                "absolute -z-10 top-0 left-0 transform -translate-x-1/4 -translate-y-1/3",
+                "absolute z-0 top-0 left-0 transform -translate-x-1/4 -translate-y-1/3",
                 "text-9xl text-muted-foreground/20"
               )}
             />
@@ -231,11 +244,14 @@ export default function DSPage() {
               <p className="text-xl font-medium text-foreground">
                 Prof. V. Kamakoti
               </p>
-              <p className="text-xm">Director, IIT Madras</p>
+              <p className="text-xm text-secondary-foreground">Director, IIT Madras</p>
             </div>
           </div>
         </div>
       </div>
+
+      {/* FAQs */}
+      <FAQs />
     </PageWrapper>
   );
 }
