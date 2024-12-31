@@ -256,7 +256,7 @@ export default function NavBar({ className, ...props }: Props) {
         <div className={cn("h-20 flex justify-between items-center w-full")}>
           <div className={cn("flex items-center")}>
             <div className={cn("")}>
-              <Link href="https://study.iitm.ac.in/">
+              <Link href="/">
                 <Logo className={cn("w-auto h-12")} textColor="#ffffff" />
               </Link>
             </div>
@@ -303,7 +303,10 @@ export default function NavBar({ className, ...props }: Props) {
                       >
                         {item.children.map((child, childIndex) =>
                           child.title === "hr" ? (
-                            <hr key={childIndex} className={cn("my-2 border-muted-foreground/50")} />
+                            <hr
+                              key={childIndex}
+                              className={cn("my-2 border-muted-foreground/50")}
+                            />
                           ) : (
                             <Link
                               key={childIndex}
@@ -336,7 +339,7 @@ export default function NavBar({ className, ...props }: Props) {
               </div>
             ))}
 
-            <Link href={"https://ds.study.iitm.ac.in/auth/login"}>
+            <Link href={"#"}>
               <button
                 className={cn(
                   "px-4 py-2 bg-foreground hover:bg-muted-foreground transition-colors duration-300 text-background font-semibold rounded-lg uppercase"
@@ -482,7 +485,7 @@ export default function NavBar({ className, ...props }: Props) {
               </div>
             ))}
 
-            <Link href={"https://ds.study.iitm.ac.in/auth/login"}>
+            <Link href={"#"}>
               <button
                 className={cn(
                   "px-4 py-2 w-full rounded-lg",

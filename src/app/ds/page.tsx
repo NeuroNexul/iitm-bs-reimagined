@@ -54,9 +54,13 @@ export default function DSPage() {
               <div className="flex flex-row items-center gap-4">
                 <AnimatedButton
                   className={cn(
-                    "bg-orange-600/70 bg-blend-screen hover:bg-orange-800/90",
-                    "text-foreground hover:text-foreground transition-all duration-300",
-                    "font-medium tracking-wide"
+                    "text-foreground hover:text-foreground transition-all",
+                    "font-medium tracking-wide",
+                    // "bg-orange-600/70 hover:bg-orange-800/90",
+                    "bg-transparent hover:bg-transparent",
+                    "bg-[linear-gradient(to_right,_#ee7752,_#e73c7e,_#FF6347)]",
+                    "[background-size:_200%_200%] [background-position:_100%_0%]",
+                    "animate-gradient-xy"
                   )}
                   size="lg"
                 >
@@ -64,10 +68,10 @@ export default function DSPage() {
                 </AnimatedButton>
 
                 <AnimatedButton
-                  variant="ghost"
+                  variant="outline"
                   className={cn(
                     "text-foreground transition-all duration-300",
-                    "font-medium tracking-wide px-4"
+                    "font-medium tracking-wide px-4 border-muted-foreground/50"
                   )}
                   size="lg"
                 >
@@ -244,7 +248,9 @@ export default function DSPage() {
               <p className="text-xl font-medium text-foreground">
                 Prof. V. Kamakoti
               </p>
-              <p className="text-xm text-secondary-foreground">Director, IIT Madras</p>
+              <p className="text-xm text-secondary-foreground">
+                Director, IIT Madras
+              </p>
             </div>
           </div>
         </div>
