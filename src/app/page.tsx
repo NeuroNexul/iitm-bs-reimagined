@@ -110,10 +110,10 @@ export default function Home() {
         className={cn(
           "w-full max-w-7xl mx-auto px-8 py-4 mt-8 flex flex-row gap-4",
           "rounded-lg",
-          "bg-orange-100 text-orange-800/90 items-center justify-center"
+          "bg-orange-100 text-orange-800/90 items-start justify-center"
         )}
       >
-        <InfoIcon size={24} className="text-orange-800/90" />
+        <InfoIcon size={24} className="text-orange-800/90 flex-shrink-0" />
 
         <p className="text-lg text-orange-800/90">
           This page is not a part of our subbmision. It&apos;s just an indexing
