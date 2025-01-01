@@ -218,7 +218,7 @@ export default function DSPage() {
             width={500}
             height={500}
             className={cn(
-              "flex-1 rounded-lg border-2 shadow-lg w-full max-w-[300px] aspect-square"
+              "flex-1 [flex-basis:auto] rounded-lg border-2 shadow-lg w-full max-w-[300px] aspect-square"
             )}
           />
 
