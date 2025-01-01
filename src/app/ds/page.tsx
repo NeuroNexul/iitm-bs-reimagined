@@ -6,8 +6,13 @@ import Image from "next/image";
 import { FaPeopleGroup, FaQuoteRight } from "react-icons/fa6";
 import { LuLaptop } from "react-icons/lu";
 import { MdOutlineVerified } from "react-icons/md";
+import { PiBrainLight, PiStudentLight } from "react-icons/pi";
 import FAQs from "./faqs";
 import { Metadata } from "next";
+import OnlineLearningIcon from "@/components/icons/online-learning";
+import Flexible from "@/components/icons/flexible";
+import Support from "@/components/icons/support";
+import AgeLimit from "@/components/icons/age-limit";
 
 export const metadata: Metadata = {
   title: "IITM BS in Data Science & Applications",
@@ -128,9 +133,11 @@ export default function DSPage() {
             )}
           >
             <TrophyIcon size={48} className="text-secondary-foreground mb-6" />
-            <h3 className="text-2xl font-bold text-foreground">Awarded</h3>
+            <h3 className="text-2xl font-bold text-foreground">
+              Best Online Program
+            </h3>
             <p className="text-lg text-muted-foreground">
-              by QS Reimagine Education
+              Awarded by QS Reimagine Education
             </p>
           </div>
 
@@ -186,7 +193,7 @@ export default function DSPage() {
       {/* Director's Message */}
       <div
         className={cn(
-          "w-full max-w-7xl mx-auto my-12 px-4 sm:px-8",
+          "w-full max-w-7xl mx-auto my-12 lg:my-24 px-4 sm:px-8",
           "flex flex-col items-center"
         )}
       >
@@ -252,6 +259,141 @@ export default function DSPage() {
                 Director, IIT Madras
               </p>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Offerings */}
+      <div
+        className={cn(
+          "w-full max-w-[90rem] mx-auto my-12 mt-24 px-4 sm:px-8",
+          "flex flex-col items-center"
+        )}
+      >
+        <h2
+          className={cn(
+            "inline-block relative mt-8 mb-4",
+            "text-4xl font-bold text-center text-foreground"
+            // "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
+          )}
+        >
+          Why Choose <span className="text-secondary-foreground">IITM BS</span>{" "}
+          in Data Science?
+        </h2>
+
+        <p className="text-lg text-muted-foreground text-center max-w-3xl">
+          Transform your future with a pioneering curriculum in data science.
+        </p>
+
+        <div
+          className={cn(
+            "mt-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
+          )}
+        >
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <OnlineLearningIcon className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                World Class Faculty
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Learn from carefully designed courses taught by experienced IIT
+              Madras faculty and other industry experts.
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <PiBrainLight className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Industry-Relevant
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              The graduates of this programme will have strong fundamentals and
+              industry-ready skills.
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <AgeLimit className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                No Age Limit
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Learners from any age and any where in the world can study in this
+              program. Current age of learners : 17 to 81 years.
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <Flexible className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">Flexible</h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Our program is flexible with exit points for learners from
+              different backgrounds with different aspirations.
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <Support className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Course Support
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Each course will have discussion forums with an active academic
+              team to help in clearing doubts.
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <PiStudentLight className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Scholarship
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Learners from &lt; 5LPA eligible for up to 75% fee waivers. 2000+
+              students study for free
+            </p>
           </div>
         </div>
       </div>

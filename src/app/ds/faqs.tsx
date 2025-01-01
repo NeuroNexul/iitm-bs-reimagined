@@ -75,18 +75,18 @@ export default function FAQs({}: Props) {
   return (
     <div
       className={cn(
-        "w-full max-w-7xl mx-auto my-12 px-4 sm:px-8",
+        "w-full max-w-7xl mx-auto my-12 mt-24 px-4 sm:px-8",
         "flex flex-col items-center"
       )}
     >
       <h2
         className={cn(
-          "inline-block relative mt-8 mb-4 pb-4",
+          "inline-block relative mt-8 mb-4",
           "text-4xl font-bold text-center text-foreground"
           // "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
         )}
       >
-        Frequently Asked Questions
+        Frequently Asked <span className="text-secondary-foreground">Questions</span>
       </h2>
 
       <p className="text-lg text-center text-muted-foreground mb-8">
@@ -96,7 +96,7 @@ export default function FAQs({}: Props) {
       <Accordion
         type="single"
         collapsible
-        className={cn("w-full max-w-5xl mx-auto")}
+        className={cn("w-full max-w-5xl mx-auto mt-8")}
       >
         {faqs.map((faq, index) => (
           <AccordionItem
