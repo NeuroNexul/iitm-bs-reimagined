@@ -404,7 +404,7 @@ export default function DSPage() {
         <h2
           className={cn(
             "inline-block relative mt-8 pb-4",
-            "text-4xl lg:text-5xl font-bold text-center text-foreground",
+            "text-4xl font-bold text-center text-foreground",
             "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
           )}
         >
@@ -417,8 +417,8 @@ export default function DSPage() {
             "relative w-dvw mt-12 overflow-hidden",
             "flex flex-row flex-nowrap *:flex-shrink-0 *:px-2",
             "*:animate-slide-x *:hover:[animation-play-state:paused]",
-            "before:absolute before:z-10 before:top-0 before:left-0 before:pointer-events-none before:w-40 lg:before:w-60 before:h-full before:bg-gradient-to-r before:from-background before:via-background/60 before:via-50% before:to-transparent",
-            "after:absolute after:z-10 after:top-0 after:right-0 after:pointer-events-none after:w-40 lg:after:w-60 after:h-full after:bg-gradient-to-l after:from-background after:via-background/60 after:via-50% after:to-transparent"
+            "before:absolute before:z-10 before:top-0 before:left-0 before:pointer-events-none before:w-40 lg:before:w-56 before:h-full before:bg-gradient-to-r before:from-background before:via-background/60 before:via-50% before:to-transparent",
+            "after:absolute after:z-10 after:top-0 after:right-0 after:pointer-events-none after:w-40 lg:after:w-56 after:h-full after:bg-gradient-to-l after:from-background after:via-background/60 after:via-50% after:to-transparent"
           )}
         >
           {Array.from({ length: 2 }).map((_, idx) => (
@@ -446,8 +446,8 @@ export default function DSPage() {
             "relative w-dvw mt-12 overflow-hidden",
             "flex flex-row flex-nowrap *:flex-shrink-0 *:px-2",
             "*:animate-slide-x *:hover:[animation-play-state:paused]",
-            "before:absolute before:z-10 before:top-0 before:left-0 before:pointer-events-none before:w-40 lg:before:w-60 before:h-full before:bg-gradient-to-r before:from-background before:via-background/60 before:via-50% before:to-transparent",
-            "after:absolute after:z-10 after:top-0 after:right-0 after:pointer-events-none after:w-40 lg:after:w-60 after:h-full after:bg-gradient-to-l after:from-background after:via-background/60 after:via-50% after:to-transparent"
+            "before:absolute before:z-10 before:top-0 before:left-0 before:pointer-events-none before:w-40 lg:before:w-56 before:h-full before:bg-gradient-to-r before:from-background before:via-background/60 before:via-50% before:to-transparent",
+            "after:absolute after:z-10 after:top-0 after:right-0 after:pointer-events-none after:w-40 lg:after:w-56 after:h-full after:bg-gradient-to-l after:from-background after:via-background/60 after:via-50% after:to-transparent"
           )}
         >
           {Array.from({ length: 2 }).map((_, idx) => (
@@ -474,6 +474,7 @@ export default function DSPage() {
 
       {/* Offerings */}
 
+
       {/* FAQs */}
       <FAQs />
     </PageWrapper>
@@ -490,10 +491,10 @@ function InstructorsCard({
   image: string;
 }) {
   return (
-    <div className="group/card relative h-48 w-52 lg:h-72 lg:w-80">
+    <div className="group/card relative h-48 w-52 lg:h-64 lg:w-72">
       <div
         className={cn(
-          "size-40 lg:size-60 relative rounded-2xl overflow-hidden",
+          "size-40 lg:size-56 relative rounded-2xl overflow-hidden",
           "after:absolute after:z-0 after:top-0 after:left-0 after:w-full after:h-full after:bg-selection/30 after:rounded-2xl",
           "group-hover/card:after:bg-transparent after:transition-all after:duration-300"
         )}
