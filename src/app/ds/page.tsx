@@ -4,9 +4,11 @@ import { cn } from "@/lib/utils";
 import { TrophyIcon } from "lucide-react";
 import Image from "next/image";
 import { FaPeopleGroup, FaQuoteRight } from "react-icons/fa6";
-import { LuLaptop } from "react-icons/lu";
+import { LuBriefcaseBusiness, LuLaptop } from "react-icons/lu";
 import { MdOutlineVerified } from "react-icons/md";
 import { PiBrainLight, PiStudentLight } from "react-icons/pi";
+import { AiOutlineCode } from "react-icons/ai";
+import { BsBoxes } from "react-icons/bs";
 import FAQs from "./faqs";
 import { Metadata } from "next";
 import OnlineLearningIcon from "@/components/icons/online-learning";
@@ -14,6 +16,7 @@ import Flexible from "@/components/icons/flexible";
 import Support from "@/components/icons/support";
 import AgeLimit from "@/components/icons/age-limit";
 import dsInstructors from "@/assets/data/ds-instructor.json";
+import NeuralNetworkIcon from "@/components/icons/neural-network";
 
 export const metadata: Metadata = {
   title: "IITM BS in Data Science & Applications",
@@ -283,7 +286,7 @@ export default function DSPage() {
         </h2>
 
         <p className="text-lg text-muted-foreground text-center max-w-3xl">
-          Transform your future with a pioneering curriculum in data science.
+          Transform your future with a pioneering curriculum in data science
         </p>
 
         <div
@@ -404,13 +407,17 @@ export default function DSPage() {
         <h2
           className={cn(
             "inline-block relative mt-8 pb-4",
-            "text-4xl font-bold text-center text-foreground",
-            "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
+            "text-4xl font-bold text-center text-foreground"
+            // "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
           )}
         >
           Meet Our{" "}
           <span className="text-secondary-foreground">Instructors</span>
         </h2>
+
+        <p className="text-lg text-muted-foreground text-center max-w-3xl">
+          Learn from the brightest minds shaping the future of data science
+        </p>
 
         <div
           className={cn(
@@ -445,7 +452,7 @@ export default function DSPage() {
           className={cn(
             "relative w-dvw mt-12 overflow-hidden",
             "flex flex-row flex-nowrap *:flex-shrink-0 *:px-2",
-            "*:animate-slide-x *:hover:[animation-play-state:paused]",
+            "*:animate-slide--x *:hover:[animation-play-state:paused]",
             "before:absolute before:z-10 before:top-0 before:left-0 before:pointer-events-none before:w-40 lg:before:w-56 before:h-full before:bg-gradient-to-r before:from-background before:via-background/60 before:via-50% before:to-transparent",
             "after:absolute after:z-10 after:top-0 after:right-0 after:pointer-events-none after:w-40 lg:after:w-56 after:h-full after:bg-gradient-to-l after:from-background after:via-background/60 after:via-50% after:to-transparent"
           )}
@@ -457,23 +464,119 @@ export default function DSPage() {
                 "w-auto flex flex-row flex-nowrap *:flex-shrink-0 gap-4"
               )}
             >
-              {dsInstructors
-                .slice(dsInstructors.length / 2)
-                .map((ins, idx) => (
-                  <InstructorsCard
-                    key={idx}
-                    name={ins.name}
-                    designation={ins.designation}
-                    image={ins.image_link}
-                  />
-                ))}
+              {dsInstructors.slice(dsInstructors.length / 2).map((ins, idx) => (
+                <InstructorsCard
+                  key={idx}
+                  name={ins.name}
+                  designation={ins.designation}
+                  image={ins.image_link}
+                />
+              ))}
             </div>
           ))}
         </div>
       </div>
 
       {/* Offerings */}
+      <div
+        className={cn(
+          "w-full max-w-[100rem] mx-auto my-12 mt-24 px-4 sm:px-8",
+          "flex flex-col items-center"
+        )}
+      >
+        <h2
+          className={cn(
+            "inline-block relative mt-8 mb-4",
+            "text-4xl font-bold text-center text-foreground"
+            // "after:absolute after:w-1/2 after:h-1 after:bg-secondary-foreground after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:rounded-full"
+          )}
+        >
+          What You Will <span className="text-secondary-foreground">Learn</span>
+        </h2>
 
+        <p className="text-lg text-muted-foreground text-center max-w-3xl">
+          Master the tools, techniques, and mindset of a data science innovator
+        </p>
+
+        <div
+          className={cn(
+            "mt-16 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-8"
+          )}
+        >
+          <div
+            className={cn(
+              "flex flex-col justify-between",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <NeuralNetworkIcon className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Data science Courses
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              ML Foundations, Deep Learning, Reinforcement Learning, Computer
+              Vision, LLMs, Big Data
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col justify-between",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <AiOutlineCode className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-medium text-foreground">
+                Programming Courses
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Python, Java, PostGreSQL, Linux commands, C programming, Full
+              Stack Application Development
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col justify-between",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <BsBoxes className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Frameworks and Libraries
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Flask, Vue, NumPy, Scikitlearn, Pytorch, OpenCV, Kafka and many
+              more relevant for Data Science applications
+            </p>
+          </div>
+
+          <div
+            className={cn(
+              "flex flex-col justify-between",
+              "rounded-lg border-2 shadow-lg p-6 bg-selection/30"
+            )}
+          >
+            <div className="flex flex-row items-center gap-4 mb-4">
+              <LuBriefcaseBusiness className="size-10 text-secondary-foreground" />
+              <h3 className="text-2xl font-bold text-foreground">
+                Business Courses
+              </h3>
+            </div>
+            <p className="text-lg text-muted-foreground">
+              Business Data Management, Business Analytics, Tools in Data
+              Science, Financial Forensics, Market Research, Managerial
+              Economics
+            </p>
+          </div>
+        </div>
+      </div>
 
       {/* FAQs */}
       <FAQs />

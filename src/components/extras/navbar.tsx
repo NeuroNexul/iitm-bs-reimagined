@@ -196,14 +196,6 @@ const NavItems = [
     ],
   },
   {
-    title: "Events",
-    link: "https://study.iitm.ac.in/ds/events.html",
-  },
-  {
-    title: "FAQ",
-    link: "https://study.iitm.ac.in/ds/faq.html",
-  },
-  {
     title: "About IITM ",
     link: "",
     children: [
@@ -230,6 +222,14 @@ const NavItems = [
         link: "https://podgoodies.iitmadrasonline.in/",
       },
     ],
+  },
+  {
+    title: "Events",
+    link: "https://study.iitm.ac.in/ds/events.html",
+  },
+  {
+    title: "FAQ",
+    link: "https://study.iitm.ac.in/ds/faq.html",
   },
   {
     title: "Partnerships",
