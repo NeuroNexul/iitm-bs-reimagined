@@ -20,7 +20,7 @@ function Card({
       <Link href={href} className="">
         <div
           className={cn(
-            "w-full min-h-[315px] rounded-2xl bg-white shadow-md overflow-clip",
+            "w-full min-h-[315px] rounded-2xl bg-foreground shadow-lg overflow-clip",
             "border-b-8 border-orange-800/90"
           )}
         >
@@ -116,7 +116,7 @@ export default function Home() {
         <InfoIcon size={24} className="text-orange-800/90 flex-shrink-0" />
 
         <p className="text-lg text-orange-800/90">
-          This page is not a part of our subbmision. It&apos;s just an indexing
+          This page is not a part of our submision. It&apos;s just an indexing
           page to help the evaluators navigate through the different parts of
           our submission.
         </p>
@@ -133,9 +133,10 @@ export default function Home() {
           image="https://res.cloudinary.com/djoo8ogmp/image/upload/v1735678598/uploaded/apply_now_card_3_l2kbgq.jpg"
           href="/ds"
           links={[
-            { title: "Curriculum", href: "/ds/curriculum" },
-            { title: "Faculty", href: "/ds/faculty" },
-            { title: "FAQs", href: "/ds/faqs" },
+            { title: "Academics", href: "/ds/academics" },
+            { title: "Admissions", href: "/ds/admissions" },
+            { title: "About IITM", href: "/ds/about-iitm" },
+            { title: "Partnerships", href: "/ds/partnerships" },
           ]}
         />
 
@@ -144,9 +145,9 @@ export default function Home() {
           image="https://res.cloudinary.com/djoo8ogmp/image/upload/v1735678603/uploaded/apply_now_card_4_mlbpkx.jpg"
           href="/es"
           links={[
-            { title: "Curriculum", href: "/es/curriculum" },
-            { title: "Faculty", href: "/es/faculty" },
-            { title: "FAQs", href: "/es/faqs" },
+            { title: "Academics", href: "/es/academics" },
+            { title: "Admissions", href: "/es/admissions" },
+            { title: "About IITM", href: "/es/about-iitm" },
           ]}
         />
 
@@ -155,9 +156,9 @@ export default function Home() {
           image="https://res.cloudinary.com/djoo8ogmp/image/upload/v1735678607/uploaded/apply_now_card_1_jbtkmv.jpg"
           href="/diploma"
           links={[
-            { title: "Curriculum", href: "/diploma/curriculum" },
-            { title: "Faculty", href: "/diploma/faculty" },
-            { title: "FAQs", href: "/diploma/faqs" },
+            { title: "Academics", href: "/diploma/academics" },
+            { title: "Admissions", href: "/diploma/admissions" },
+            { title: "About IITM", href: "/diploma/about-iitm" },
           ]}
         />
       </div>
